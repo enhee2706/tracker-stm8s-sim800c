@@ -6,6 +6,19 @@ A Tracker Based on STM8S and SIM800C.
 * Using HTTP to upload data.
 * Low cost.
 
+## Hardware
++-STM8S-+       +-SIM800C-+
+|       |       |         |
+|    D5 +-------+ RXD     |
+|       |       |         |
+|    D6 +-------+ TXD     |
+|       |       |         |
+|   GND +-------+ GND     |
+|       |       |         |
+|    C7 +-|4K7|-+ PWX     |
+|       |       |         |
++-------+       +---------+
+
 ## How to use
 ### ST Visual Develop
 * Create a project by ST Visual Develop.
