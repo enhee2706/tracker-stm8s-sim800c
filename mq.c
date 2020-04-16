@@ -1,7 +1,7 @@
 #include "mq.h"
 #include "kfifo.h"
 
-static unsigned char fifo_buffer[128];
+static unsigned char fifo_buffer[16];
 static struct kfifo fifo;
 
 int MQ_Init(void) {

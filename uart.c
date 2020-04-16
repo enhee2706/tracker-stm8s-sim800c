@@ -1,11 +1,12 @@
 #include "uart.h"
 #include "kfifo.h"
+#include "stm8s003f.h"
 
 static struct kfifo fifo;
 static char fifo_buffer[128];
 
-void UART1_init(void) {
-  fifo_init(&fifo, fifo_buffer, sizeof(fifo_buffer));
+void UART1_Init(void) {
+  kfifo_init(&fifo, fifo_buffer, sizeof(fifo_buffer));
 
   // baud = 115200
   // 2MHz / 115200 = 17.36, 0x0011
@@ -31,10 +32,6 @@ void UART1_SendString(unsigned char *buf, unsigned char len) {
   }
 }
 
-int UART1_PutBuffer(unsigned char b) {
-  return kfifo_put(&fifo, b);
-}
-
 void UART1_ReceiveString(unsigned char *buf, unsigned char *len) {
   unsigned char i = 0;
   unsigned char b;
@@ -42,4 +39,8 @@ void UART1_ReceiveString(unsigned char *buf, unsigned char *len) {
     buf[i++] = b;
   }
   *len = i;
+}
+
+int UART1_PutBuffer(unsigned char b) {
+  return kfifo_put(&fifo, b);
 }
