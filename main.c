@@ -18,11 +18,11 @@
 }
 
 @far @interrupt void TIM4_UPD_OVF_IRQHandler(void) {
-	static int cnt = 0;
-	cnt++;
+  static int cnt = 0;
+  cnt++;
 
-	TIM4_SR = 0x00;
-	if (cnt >= 62) { // 16.128ms * 62 = 0.999936s
+  TIM4_SR = 0x00;
+  if (cnt >= 62) { // 16.128ms * 62 = 0.999936s
     cnt = 0;
     MQ_PutMessage(ID_MSG_TIMER_1S);
   }
@@ -52,5 +52,3 @@ void main() {
     }
   }
 }
-
-
