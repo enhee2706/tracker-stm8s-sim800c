@@ -7,6 +7,7 @@ A Tracker Based on STM8S and SIM800C.
 * Low cost.
 
 ## Hardware
+```
 +-STM8S-+       +-SIM800C-+
 |       |       |         |
 |    D5 +-------+ RXD     |
@@ -18,6 +19,7 @@ A Tracker Based on STM8S and SIM800C.
 |    C7 +-|4K7|-+ PWX     |
 |       |       |         |
 +-------+       +---------+
+```
 
 ## How to use
 ### ST Visual Develop
