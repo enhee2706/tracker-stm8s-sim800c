@@ -1,3 +1,6 @@
+
+#include <string.h>
+
 #include "stm8s003f.h"
 #include "mq.h"
 #include "gpio.h"
