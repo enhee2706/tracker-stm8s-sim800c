@@ -22,3 +22,11 @@ void GPIO_Init(void)
 void GPIO_LEDReverse() {
 	PB_ODR ^= 0x20;
 }
+
+void GPIO_PCSetLow(unsigned char mask) {
+	PC_ODR &= ~mask;
+}
+
+void GPIO_PCSetHigh(unsigned char mask) {
+	PC_ODR |= mask;
+}
